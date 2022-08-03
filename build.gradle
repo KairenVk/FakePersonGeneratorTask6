@@ -29,6 +29,6 @@ tasks.named('test') {
 
 jar {
 	manifest {
-		attributes 'Main-Class': 'Task6.FakePersonGenerator.FakePersonGeneratorApplication'
+		attributes 'Main-Class': 'FakePersonGeneratorApplication'
 	}
 }
