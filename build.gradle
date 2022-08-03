@@ -21,6 +21,7 @@ dependencies {
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.7'
 
 	implementation 'com.ibm.icu:icu4j:71.1'
+	implementation 'no.tornado:kobalt-copy-dependencies:0.2'
 }
 
 tasks.named('test') {
