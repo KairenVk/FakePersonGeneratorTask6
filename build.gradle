@@ -29,6 +29,7 @@ tasks.named('test') {
 }
 
 jar {
+	enabled = true
 	manifest {
 		attributes 'Main-Class': 'FakePersonGeneratorApplication'
 	}
