@@ -21,6 +21,7 @@ dependencies {
 	implementation 'net.datafaker:datafaker:1.5.0'
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.7'
 	implementation 'com.ibm.icu:icu4j:71.1'
+	implementation 'com.heroku.sdk:heroku-deploy:3.0.4'
 }
 
 tasks.named('test') {
