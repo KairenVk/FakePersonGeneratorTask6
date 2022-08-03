@@ -29,7 +29,8 @@ tasks.named('test') {
 
 jar {
 	manifest {
-		attributes 'Main-Class': 'Task6.FakePersonGenerator.FakePersonGeneratorApplication'
+		attributes(
+				'Main-Class': 'Task6.FakePersonGenerator.FakePersonGeneratorApplication'
+		)
 	}
-	from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
