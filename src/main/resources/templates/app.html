@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fake Person Generator</title>
+
+    <link th:href="@{/bootstrap/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script th:src="@{/bootstrap/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/infinite-scroll.pkgd.min.js}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script th:src="@{/js/InfiniteScroll.js}"></script>
+    <script th:src="@{/js/onInputChange.js}"></script>
+    <script>
+        $(document).on('click', '#randomSeed', function (e) {
+            let fakePersons = $('#fakePersons');
+            let start = fakePersons.attr('data-start');
+            let random = Math.round(Math.random()*10000);
+            $('#seed').val(random);
+            $.getScript("onInputChange.js", onInputChange());
+        });
+    </script>
+</head>
+
+<body class="bg-light container-fluid">
+    <div class="container vh-100">
+        <div class="py-5 text-center">
+            <h2>Random Fake Person Generator</h2>
+        </div>
+        <div class="w-auto center-block text-center">
+            <form onsubmit="return false">
+                <div class="py-3 col-12">
+                    <label for="locale">Select localization:</label>
+                    <select name="locale" id="locale">
+                        <option value="EN-GB">English</option>
+                        <option value="FR">French</option>
+                        <option value="PL">Polish</option>
+                    </select>
+                </div>
+                <div class="col-12 d-inline-block w-50 text-center center-block">
+                <label for="errorSlider">Errors per record:</label>
+                <input type="range" class="form-range" min="0" max="10" step="0.5" id="errorSlider" value="10" oninput="this.nextElementSibling.value = this.value"/>
+                <input type="number" min="0" max="1000" id="errorField" value="10" step="0.5" oninput="this.previousElementSibling.value = this.value"/>
+                </div>
+                <div class="col-12 py-3">
+                    <label for="seed">Generator seed:</label>
+                    <input type="number" id="seed" value="10"></input>
+                    <div id="randomSeed" class="btn btn-info randomSeed">Random</div>
+                </div>
+            </form>
+        </div>
+        <div class="py-5 text-center">
+            <table id="fakePersons" data-page="0" data-limit="10" data-start="20"  class="table table-bordered table-striped text-wrap text-break">
+                <thead>
+                <tr>
+                    <th style="min-width:100px">Index</th>
+                    <th style="min-width:100px">Identifier:</th>
+                    <th style="min-width:100px">Name</th>
+                    <th style="min-width:100px">Address</th>
+                    <th style="min-width:100px">Phone</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
