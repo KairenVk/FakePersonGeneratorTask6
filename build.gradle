@@ -13,10 +13,6 @@ repositories {
 	mavenCentral()
 }
 
-configurations {
-	implementation
-}
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.7.2'
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.2'
@@ -35,8 +31,5 @@ tasks.named('test') {
 jar {
 	manifest {
 		attributes 'Main-Class': 'FakePersonGeneratorApplication'
-	}
-	from {
-		configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
 	}
 }
