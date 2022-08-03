@@ -26,6 +26,9 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-application {
-	mainClass = 'Task6.FakePersonGeneratorApplication'
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'Task6.FakePersonGeneratorApplication.java'
+	}
 }
