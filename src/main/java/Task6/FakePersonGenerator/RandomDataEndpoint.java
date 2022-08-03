@@ -1,3 +1,5 @@
+package Task6.FakePersonGenerator;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.web.bind.annotation.*;
 
