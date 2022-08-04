@@ -1,1 +1,1 @@
-web: java  -jar build/libs/FakePersonGenerator-0.0.1-SNAPSHOT.jar --port $PORT
+web: java  -jar build/libs/FakePersonGenerator-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT
